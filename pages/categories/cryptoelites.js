@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "../Nav";
+import Footer from "../Footer";
 import Head from "next/head";
 import styles from "../../styles/Categories.module.css";
 import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 function cryptoelites({ posts, categories }) {
-	console.log(posts);
 	return (
 		<div>
 			<Head>
@@ -38,6 +38,7 @@ function cryptoelites({ posts, categories }) {
 						</div>
 					))}
 				</div>
+				<Footer />
 			</main>
 		</div>
 	);

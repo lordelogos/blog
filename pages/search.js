@@ -5,6 +5,7 @@ import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import styles from "../styles/Search.module.css";
 import Head from "next/head";
+import Footer from "./Footer";
 
 function search({ cats, posts }) {
 	const router = useRouter();
@@ -47,6 +48,7 @@ function search({ cats, posts }) {
 						))}
 					</div>
 				</section>
+				<Footer />
 			</main>
 		</div>
 	);

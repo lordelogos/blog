@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Button from "@material-ui/core/Button";
@@ -143,6 +144,7 @@ export default function Home({
 						</Link>
 					</div>
 				</section>
+				<Footer />
 			</main>
 		</div>
 	);

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer";
 import Nav from "../Nav";
 import Head from "next/head";
 import styles from "../../styles/Categories.module.css";
@@ -6,7 +7,6 @@ import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 function cryptovolgon({ posts, categories }) {
-	console.log(posts);
 	return (
 		<div>
 			<Head>
@@ -35,6 +35,7 @@ function cryptovolgon({ posts, categories }) {
 						</div>
 					))}
 				</div>
+				<Footer />
 			</main>
 		</div>
 	);
