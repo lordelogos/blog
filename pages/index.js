@@ -1,65 +1,190 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Nav from "./Nav";
+import Link from "next/link";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import Button from "@material-ui/core/Button";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home({
+	categories,
+	featured,
+	volgon,
+	gnosis,
+	elites,
+	twitter,
+}) {
+	return (
+		<div className={styles.container}>
+			<Head>
+				<title>Cryptonium Blog</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<main>
+				<Nav categories={categories} />
+				<section className={styles.section}>
+					<div className={styles.featured}>
+						<p className={styles.featured__cat}>{featured?.category}</p>
+						<Link href={`/posts/${featured.articles[0].id}`}>
+							<a className={styles.featured__name}>
+								{featured.articles[0].Title}
+							</a>
+						</Link>
+						<p className={styles.featured__info}>
+							{featured.articles[0].Author} -&nbsp;
+							<AccessTimeIcon style={{ fontSize: 16 }} /> &nbsp;
+							{Math.ceil(featured.articles[0].Body.length / 200)} min
+						</p>
+					</div>
+				</section>
+				<section className={styles.collection}>
+					<h2 className={styles.collection__header}>Cryptovolgon</h2>
+					<p className={styles.collection__desc}>
+						Latest events in the world of Cryptocurrency
+					</p>
+					<div className={styles.collection__articles}>
+						{volgon.articles.slice(0, 3).map((post) => (
+							<div key={post.id} className={styles.article}>
+								<p className={styles.article__cat}>{volgon.category}</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.article__name}>{post.Title}</a>
+								</Link>
+								<p className={styles.article__info}>
+									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp; {Math.ceil(post.Body.length / 200)} min
+								</p>
+							</div>
+						))}
+					</div>
+					<div className={styles.morediv}>
+						<Link href={`/categories/cryptovolgon`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
+				</section>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+				<section className={styles.collection}>
+					<h2 className={styles.collection__header}>Cryptognosis</h2>
+					<p className={styles.collection__desc}>
+						Getting started in the crypto space. Join me!
+					</p>
+					<div className={styles.collection__articles}>
+						{gnosis.articles.slice(0, 3).map((post) => (
+							<div key={post.id} className={styles.article}>
+								<p className={styles.article__cat}>{gnosis.category}</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.article__name}>{post.Title}</a>
+								</Link>
+								<p className={styles.article__info}>
+									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp; {Math.ceil(post.Body.length / 200)} min
+								</p>
+							</div>
+						))}
+					</div>
+					<div className={styles.morediv}>
+						<Link href={`/categories/cryptognosis`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
+				</section>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+				<section className={styles.collection}>
+					<h2 className={styles.collection__header}>Cryptoelites</h2>
+					<p className={styles.collection__desc}>
+						Get exposed to some major players in the crypto space.
+					</p>
+					<div className={styles.collection__articles}>
+						{elites.articles.slice(0, 3).map((post) => (
+							<div key={post.id} className={styles.article}>
+								<p className={styles.article__cat}>{elites.category}</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.article__name}>{post.Title}</a>
+								</Link>
+								<p className={styles.article__info}>
+									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp; {Math.ceil(post.Body.length / 200)} min
+								</p>
+							</div>
+						))}
+					</div>
+					<div className={styles.morediv}>
+						<Link href={`/categories/cryptoelites`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
+				</section>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+				<section className={styles.collection}>
+					<h2 className={styles.collection__header}>Cryptotwitter</h2>
+					<p className={styles.collection__desc}>
+						Tweet of the week from your favourites in the game.
+					</p>
+					<div className={styles.collection__articles}>
+						{twitter.articles.slice(0, 3).map((post) => (
+							<div key={post.id} className={styles.article}>
+								<p className={styles.article__cat}>{twitter.category}</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.article__name}>{post.Title}</a>
+								</Link>
+								<p className={styles.article__info}>
+									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp; {Math.ceil(post.Body.length / 200)} min
+								</p>
+							</div>
+						))}
+					</div>
+					<div className={styles.morediv}>
+						<Link href={`/categories/cryptotwitter`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
+				</section>
+			</main>
+		</div>
+	);
+}
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+export async function getStaticProps() {
+	// for featured post
+	const res = await fetch("http://cryptonium-blog.herokuapp.com/categories/6");
+	const featured = await res.json();
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+	//for categories in search
+	const categories = await fetch(
+		"http://cryptonium-blog.herokuapp.com/categories"
+	);
+	const cats = await categories.json();
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+	// for articles
+	const cryptovolgon = await fetch(
+		"http://cryptonium-blog.herokuapp.com/categories/1"
+	);
+	const cryptovolgon_articles = await cryptovolgon.json();
+	const cryptognosis = await fetch(
+		"http://cryptonium-blog.herokuapp.com/categories/2"
+	);
+	const cryptognosis_articles = await cryptognosis.json();
+	const cryptoelites = await fetch(
+		"http://cryptonium-blog.herokuapp.com/categories/3"
+	);
+	const cryptoelites_articles = await cryptoelites.json();
+	const cryptotwitter = await fetch(
+		"http://cryptonium-blog.herokuapp.com/categories/5"
+	);
+	const cryptotwitter_articles = await cryptotwitter.json();
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	return {
+		props: {
+			categories: cats,
+			featured: featured,
+			volgon: cryptovolgon_articles,
+			gnosis: cryptognosis_articles,
+			elites: cryptoelites_articles,
+			twitter: cryptotwitter_articles,
+		},
+	};
 }
