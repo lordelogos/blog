@@ -5,11 +5,11 @@
 	height: auto;
 }
 
-.article > img {
+.article > p > img {
 	margin: auto;
 	width: 100%;
 	max-width: 600px;
-	height: auto;
+	text-align: center;
 }
 
 .body {
@@ -78,6 +78,13 @@
 
 .article > p {
 	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.article li {
+	font-size: 18px;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
 }
 
 /* .article > p,
@@ -93,3 +100,16 @@
 	margin-right: auto;
 	max-width: 80%;
 } */
+
+.commentSection {
+	margin-top: 5vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.disqus {
+	margin: 0 auto;
+	width: 90%;
+}

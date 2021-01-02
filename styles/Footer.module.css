@@ -131,3 +131,51 @@
 		flex-direction: column;
 	}
 }
+
+.alert {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 10px;
+	border-radius: 10px;
+	background-color: #28a745;
+	color: white;
+	position: fixed;
+	transform: translateY(-100%);
+	top: 13vh;
+	z-index: 50;
+	animation: float-in 4s ease-in-out forwards;
+}
+
+@keyframes float-in {
+	from {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+
+	10% {
+		opacity: 100%;
+		transform: translateY(0%);
+	}
+
+	90% {
+		opacity: 100%;
+		transform: translateY(0%);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+}
+
+.alert > p {
+	display: flex;
+	align-items: center;
+}
+
+.alert > .MuiSvgIcon-root {
+	position: absolute;
+	right: 0;
+	top: 0;
+}

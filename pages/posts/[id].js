@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import Head from "next/head";
 import Marked from "marked";
 import styles from "../../styles/Post.module.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import Button from "@material-ui/core/Button";
 
 function Post({ post, categories }) {
-	console.log(post);
+	const [load, setLoad] = useState(true);
+
+	const showComment = () => {
+		setLoad(false);
+
+		window.disqus_config = function () {
+			this.page.url = window.location.href;
+			this.page.identifier = post.id;
+		};
+
+		(function () {
+			const script = document.createElement("script");
+			script.src = "https://cryptonium.disqus.com/embed.js";
+			script.setAttribute("data-timestamp", Date.now().toString());
+			document.body.appendChild(script);
+		})();
+
+		const reset = function () {
+			DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = post.id;
+					this.page.url = window.location.href;
+				},
+			});
+		};
+	};
 	return (
 		<div>
 			<Head>
@@ -29,6 +56,21 @@ function Post({ post, categories }) {
 				<div
 					className={styles.article}
 					dangerouslySetInnerHTML={{ __html: Marked(post.Body) }}></div>
+				<div className={styles.commentSection}>
+					{load && (
+						<Button
+							variant="contained"
+							style={{
+								background: "black",
+								color: "white",
+								borderRadius: "15px",
+							}}
+							onClick={showComment}>
+							Load Comments
+						</Button>
+					)}
+					<div id="disqus_thread" className={styles.disqus}></div>
+				</div>
 				<Footer />
 			</main>
 		</div>

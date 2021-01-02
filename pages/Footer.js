@@ -3,10 +3,36 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import styles from "../styles/Footer.module.css";
-import Link from "next/link";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import CloseIcon from "@material-ui/icons/Close";
 
 function Footer() {
 	const [email, setEmail] = useState("");
+	const [success, setSuccess] = useState(false);
+	const [disabled, setDisabled] = useState(false);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// const form = document.forms["newsletter-form"];
+		const formData = new FormData();
+		formData.append("email", email);
+
+		fetch(
+			"https://script.google.com/macros/s/AKfycbw6hHiMFpdKDfG_FuqWKbYBrYiBTUdb4sLpCYaLKkwGoRjPkKnmPuejWw/exec",
+			{ method: "POST", body: formData }
+		)
+			.then(() => {
+				setSuccess(true);
+				setDisabled(true);
+				setEmail("");
+				setTimeout(() => {
+					setSuccess(false);
+					setDisabled(false);
+				}, 4000);
+			})
+			.catch((error) => console.error("Error!", error.message));
+	};
+
 	return (
 		<div className={styles.footbody}>
 			<div className={styles.container}>
@@ -16,14 +42,27 @@ function Footer() {
 					directly to your inbox
 				</p>
 
-				<form className={styles.container__form}>
+				{success && (
+					<div className={styles.alert}>
+						<p>
+							Your sign up was successful&nbsp;
+							<CheckCircleIcon />
+						</p>
+					</div>
+				)}
+				<form
+					className={styles.container__form}
+					onSubmit={handleSubmit}
+					name="newsletter-form">
 					<input
 						type="email"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						placeholder="Your email addresss"
 					/>
-					<button>Subscribe</button>
+					<button type="submit" disabled={disabled}>
+						Subscribe
+					</button>
 				</form>
 
 				<div className={styles.socials__cta}>
