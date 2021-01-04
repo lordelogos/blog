@@ -1,0 +1,49 @@
+.price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.coin_container {
+	padding: 5px 0;
+	display: flex;
+	overflow-y: hidden;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: 0;
+	scrollbar-color: transparent transparent;
+}
+
+.coin_container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.coin_container {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.coin {
+	display: flex;
+	align-items: center;
+	border-right: solid 1px;
+	scroll-snap-align: center;
+}
+
+.coin:last-child {
+	border-right: none;
+}
+
+.coin > h2 {
+	padding: 0 5px;
+}
+
+.gain {
+	color: #3abc98;
+}
+
+.loss {
+	color: #fe4a68;
+}

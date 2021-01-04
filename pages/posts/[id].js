@@ -57,18 +57,7 @@ function Post({ post, categories }) {
 					className={styles.article}
 					dangerouslySetInnerHTML={{ __html: Marked(post.Body) }}></div>
 				<div className={styles.commentSection}>
-					{load && (
-						<Button
-							variant="contained"
-							style={{
-								background: "black",
-								color: "white",
-								borderRadius: "15px",
-							}}
-							onClick={showComment}>
-							Load Comments
-						</Button>
-					)}
+					{load && <button onClick={showComment}>Load Comments</button>}
 					<div id="disqus_thread" className={styles.disqus}></div>
 				</div>
 				<Footer />

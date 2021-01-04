@@ -1,8 +1,8 @@
 .search__intro {
 	width: 100%;
 	height: 30vh;
-	background: black;
-	color: white;
+	background: var(--primary);
+	color: var(--secondary);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -12,8 +12,8 @@
 .search__intro > p {
 	margin: 0 auto;
 	max-width: 90%;
-	background: white;
-	color: black;
+	background: var(--secondary);
+	color: var(--primary);
 	font-weight: 800;
 	padding: 5px 10px;
 	border-radius: 15px;
@@ -39,8 +39,8 @@
 	width: 100%;
 	padding: 5vh 15px;
 	height: auto;
-	background: black;
-	color: white;
+	background: var(--primary);
+	color: var(--secondary);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -66,8 +66,8 @@
 .article__cat {
 	max-width: 90%;
 	padding: 5px 10px;
-	background: white;
-	color: black;
+	background: var(--secondary);
+	color: var(--primary);
 	border-radius: 15px;
 	margin-bottom: 1vh;
 }
