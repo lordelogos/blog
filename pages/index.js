@@ -35,12 +35,17 @@ export default function Home({
 						<p className={styles.featured__info}>
 							{featured.articles[0].Author} -&nbsp;
 							<AccessTimeIcon style={{ fontSize: 16 }} /> &nbsp;
-							{Math.ceil(featured.articles[0].Body.length / 200)} min
+							{Math.ceil(featured.articles[0].Body.length / 400)} min
 						</p>
 					</div>
 				</section>
 				<section className={styles.collection}>
-					<h2 className={styles.collection__header}>Cryptovolgon</h2>
+					<div className={styles.morediv}>
+						<h2 className={styles.collection__header}>Cryptovolgon</h2>
+						<Link href={`/categories/cryptovolgon`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
 					<p className={styles.collection__desc}>
 						Latest events in the world of Cryptocurrency
 					</p>
@@ -54,20 +59,20 @@ export default function Home({
 								<p className={styles.article__info}>
 									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 200)} min
+									&nbsp; {Math.ceil(post.Body.length / 400)} min
 								</p>
 							</div>
 						))}
 					</div>
-					<div className={styles.morediv}>
-						<Link href={`/categories/cryptovolgon`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
 				</section>
 
 				<section className={styles.collection}>
-					<h2 className={styles.collection__header}>Cryptognosis</h2>
+					<div className={styles.morediv}>
+						<h2 className={styles.collection__header}>Cryptognosis</h2>
+						<Link href={`/categories/cryptognosis`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
 					<p className={styles.collection__desc}>
 						Getting started in the crypto space. Join me!
 					</p>
@@ -81,20 +86,20 @@ export default function Home({
 								<p className={styles.article__info}>
 									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 200)} min
+									&nbsp; {Math.ceil(post.Body.length / 400)} min
 								</p>
 							</div>
 						))}
 					</div>
-					<div className={styles.morediv}>
-						<Link href={`/categories/cryptognosis`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
 				</section>
 
 				<section className={styles.collection}>
-					<h2 className={styles.collection__header}>Cryptoelites</h2>
+					<div className={styles.morediv}>
+						<h2 className={styles.collection__header}>Cryptoelites</h2>
+						<Link href={`/categories/cryptoelites`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
 					<p className={styles.collection__desc}>
 						Get exposed to some major players in the crypto space.
 					</p>
@@ -108,20 +113,20 @@ export default function Home({
 								<p className={styles.article__info}>
 									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 200)} min
+									&nbsp; {Math.ceil(post.Body.length / 400)} min
 								</p>
 							</div>
 						))}
 					</div>
-					<div className={styles.morediv}>
-						<Link href={`/categories/cryptoelites`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
 				</section>
 
 				<section className={styles.collection}>
-					<h2 className={styles.collection__header}>Cryptotwitter</h2>
+					<div className={styles.morediv}>
+						<h2 className={styles.collection__header}>Cryptotwitter</h2>
+						<Link href={`/categories/cryptotwitter`}>
+							<a>View more &rarr;</a>
+						</Link>
+					</div>
 					<p className={styles.collection__desc}>
 						Tweet of the week from your favourites in the game.
 					</p>
@@ -135,15 +140,10 @@ export default function Home({
 								<p className={styles.article__info}>
 									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 200)} min
+									&nbsp; {Math.ceil(post.Body.length / 400)} min
 								</p>
 							</div>
 						))}
-					</div>
-					<div className={styles.morediv}>
-						<Link href={`/categories/cryptotwitter`}>
-							<a>View more &rarr;</a>
-						</Link>
 					</div>
 				</section>
 				<Footer />
@@ -190,5 +190,6 @@ export async function getStaticProps() {
 			elites: cryptoelites_articles,
 			twitter: cryptotwitter_articles,
 		},
+		revalidate: 60,
 	};
 }

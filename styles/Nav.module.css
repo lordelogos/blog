@@ -7,7 +7,8 @@
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
-	background-color: var(--secondary);
+	background-color: var(--primary);
+	color: var(--secondary);
 	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -60,8 +61,8 @@
 }
 
 .ul {
-	background-color: var(--primary); /*rgba(0, 0, 0, 0.9) */
-	color: var(--secondary);
+	background-color: var(--secondary); /*rgba(0, 0, 0, 0.9) */
+	color: var(--primary);
 	position: absolute;
 	top: 10vh;
 	left: 0;
@@ -78,8 +79,8 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 5vh;
-	background-color: var(--secondary);
-	color: var(--primary);
+	background-color: var(--primary);
+	color: var(--secondary);
 	padding: 5px;
 	border-radius: 20px;
 }
@@ -113,8 +114,8 @@
 	cursor: pointer;
 	padding: 3px 10px;
 	border-radius: 15px;
-	background: var(--secondary);
-	color: var(--primary);
+	background: var(--primary);
+	color: var(--secondary);
 }
 
 .ul > ul > li span {

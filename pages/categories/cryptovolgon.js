@@ -30,7 +30,7 @@ function cryptovolgon({ posts, categories }) {
 							<p className={styles.article__info}>
 								by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 								<AccessTimeIcon style={{ fontSize: 16 }} />
-								&nbsp; {Math.ceil(post.Body.length / 200)} min
+								&nbsp; {Math.ceil(post.Body.length / 400)} min
 							</p>
 						</div>
 					))}
@@ -52,7 +52,10 @@ export async function getStaticProps() {
 	);
 	const cryptovolgon_articles = await cryptovolgon.json();
 
-	return { props: { posts: cryptovolgon_articles, categories: cats } };
+	return {
+		props: { posts: cryptovolgon_articles, categories: cats },
+		revalidate: 60,
+	};
 }
 
 export default cryptovolgon;

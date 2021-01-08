@@ -4,7 +4,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import styles from "../styles/Footer.module.css";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import CloseIcon from "@material-ui/icons/Close";
+import Link from "next/link";
 
 function Footer() {
 	const [email, setEmail] = useState("");
@@ -68,9 +68,21 @@ function Footer() {
 				<div className={styles.socials__cta}>
 					<p>Follow us</p>
 					<div className={styles.socials}>
-						<FacebookIcon fontSize="large" style={{ cursor: "pointers" }} />
-						<TwitterIcon fontSize="large" />
-						<InstagramIcon fontSize="large" />
+						<Link href="https://web.facebook.com/IamCryptonium?_rdc=1&_rdr">
+							<a target="_blank">
+								<FacebookIcon fontSize="large" />
+							</a>
+						</Link>
+						<Link href="https://twitter.com/_Cryptonium?s=08">
+							<a target="_blank">
+								<TwitterIcon fontSize="large" />
+							</a>
+						</Link>
+						<Link href="https://www.instagram.com/iamcryptonium/">
+							<a target="_blank">
+								<InstagramIcon fontSize="large" />
+							</a>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -86,7 +98,7 @@ function Footer() {
 							preserveAspectRatio="xMidYMid meet">
 							<g
 								transform="translate(0.000000,1137.000000) scale(0.100000,-0.100000)"
-								fill="#FAFDFF"
+								fill="#0d1137"
 								stroke="none">
 								<path
 									d="M5360 11359 c-804 -51 -1623 -284 -2324 -661 -527 -284 -941 -592

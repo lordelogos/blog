@@ -83,7 +83,7 @@ export async function getStaticProps({ params }) {
 	);
 	const cats = await categories.json();
 	const post = await res.json();
-	return { props: { post: post, categories: cats } };
+	return { props: { post: post, categories: cats }, revalidate: 60 };
 }
 
 export default Post;

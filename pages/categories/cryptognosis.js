@@ -33,7 +33,7 @@ function cryptognosis({ posts, categories }) {
 							<p className={styles.article__info}>
 								by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 								<AccessTimeIcon style={{ fontSize: 16 }} />
-								&nbsp; {Math.ceil(post.Body.length / 200)} min
+								&nbsp; {Math.ceil(post.Body.length / 400)} min
 							</p>
 						</div>
 					))}
@@ -54,7 +54,10 @@ export async function getStaticProps() {
 		"http://cryptonium-blog.herokuapp.com/categories/2"
 	);
 	const cryptognosis_articles = await cryptognosis.json();
-	return { props: { posts: cryptognosis_articles, categories: cats } };
+	return {
+		props: { posts: cryptognosis_articles, categories: cats },
+		revalidate: 60,
+	};
 }
 
 export default cryptognosis;

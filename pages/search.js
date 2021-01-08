@@ -61,7 +61,7 @@ export async function getStaticProps() {
 	const cats = await categories.json();
 	const res = await fetch("http://cryptonium-blog.herokuapp.com/articles");
 	const posts = await res.json();
-	return { props: { posts, cats } };
+	return { props: { posts, cats }, revalidate: 60 };
 }
 
 export default search;

@@ -12,6 +12,7 @@ export default function PriceTracker() {
 	const [ltc, setLtc] = useState(null);
 	const [bch, setBch] = useState(null);
 	const [xlm, setXlm] = useState(null);
+	const [link, setLink] = useState(null);
 	const [iota, setIota] = useState(null);
 	const [dot, setDot] = useState(null);
 	const [fbtc, setfBtc] = useState(null);
@@ -22,6 +23,7 @@ export default function PriceTracker() {
 	const [fxlm, setfXlm] = useState(null);
 	const [fiota, setfIota] = useState(null);
 	const [fdot, setfDot] = useState(null);
+	const [flink, setfLink] = useState(null);
 
 	const fetchData = async () => {
 		const data_btc = await fetch(
@@ -86,6 +88,15 @@ export default function PriceTracker() {
 		setfIota(iota1.market_data.current_price.usd - formerIota);
 		setIota(iota1.market_data.current_price.usd);
 
+		// for chainlink
+		const data_link = await fetch(
+			"https://api.coingecko.com/api/v3/coins/chainlink"
+		);
+		const link1 = await data_link.json();
+		const formerLink = link;
+		setfLink(link1.market_data.current_price.usd - formerLink);
+		setLink(link1.market_data.current_price.usd);
+
 		// for Polkadot
 		const data_dot = await fetch(
 			"https://api.coingecko.com/api/v3/coins/polkadot"
@@ -109,7 +120,7 @@ export default function PriceTracker() {
 	};
 
 	const handleScrollRight = () => {
-		sliderRef.current.scrollLeft += 1000;
+		sliderRef.current.scrollLeft += 500;
 	};
 
 	return (
@@ -122,7 +133,7 @@ export default function PriceTracker() {
 			<div className={styles.coin_container} ref={sliderRef}>
 				<div className={styles.coin}>
 					<h2>BTC</h2>
-					<h2 className={fbch < 0 ? styles.loss : styles.gain}>
+					<h2 className={fbtc < 0 ? styles.loss : styles.gain}>
 						<span>$</span>
 						{btc && `${btc.toLocaleString()}`}
 					</h2>
@@ -160,6 +171,13 @@ export default function PriceTracker() {
 					<h2 className={fiota < 0 ? styles.loss : styles.gain}>
 						<span>$</span>
 						{iota && `${iota.toLocaleString()}`}
+					</h2>
+				</div>
+				<div className={styles.coin}>
+					<h2>LINK</h2>
+					<h2 className={flink < 0 ? styles.loss : styles.gain}>
+						<span>$</span>
+						{link && `${link.toLocaleString()}`}
 					</h2>
 				</div>
 				<div className={styles.coin}>

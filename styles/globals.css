@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap"); */
 
 :root {
-	--primary: #030927;
-	--secondary: #fff;
+	/* --primary: #030927; */
+	--primary: white;
+	--secondary: #0d1137;
 }
-
 html,
 body {
 	scroll-behavior: smooth;
@@ -15,7 +16,8 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	color: var(--primary);
-	background-color: var(--secondary);
+	background-color: var(--primary);
+	/* background-color: #bfdffa; */
 }
 
 a {

@@ -33,7 +33,7 @@ function cryptotwitter({ posts, categories }) {
 							<p className={styles.article__info}>
 								by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
 								<AccessTimeIcon style={{ fontSize: 16 }} />
-								&nbsp; {Math.ceil(post.Body.length / 200)} min
+								&nbsp; {Math.ceil(post.Body.length / 400)} min
 							</p>
 						</div>
 					))}
@@ -55,7 +55,10 @@ export async function getStaticProps() {
 	);
 	const cryptotwitter_articles = await cryptotwitter.json();
 
-	return { props: { posts: cryptotwitter_articles, categories: cats } };
+	return {
+		props: { posts: cryptotwitter_articles, categories: cats },
+		revalidate: 60,
+	};
 }
 
 export default cryptotwitter;
