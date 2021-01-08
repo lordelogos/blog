@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/Price.module.css";
-import useInterval from "./useInterval";
+import useInterval from "../hooks/useInterval";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import { IconButton } from "@material-ui/core";

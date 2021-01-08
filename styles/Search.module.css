@@ -78,8 +78,14 @@
 	text-align: center;
 	width: 90%;
 	margin-bottom: 1vh;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 800;
+}
+
+@media screen and (max-width: 600px) {
+	.article__name {
+		font-size: 24px;
+	}
 }
 
 .article__info {
