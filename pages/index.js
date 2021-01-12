@@ -48,7 +48,9 @@ export default function Home({
 					<img src={featured.articles[0].Cover_photo.formats.large.url} />
 					<div>
 						<p className={styles.fcategory}>{featured.category}</p>
-						<h2 className={styles.ftitle}>{featured.articles[0].Title}</h2>
+						<Link href={`/posts/${featured.articles[0].id}`}>
+							<a className={styles.ftitle}>{featured.articles[0].Title}</a>
+						</Link>
 						<p className={styles.fauthor}>
 							{featured.articles[0].Author}&nbsp;&nbsp;•&nbsp;&nbsp;
 							<AccessTimeIcon style={{ fontSize: 20 }} />
