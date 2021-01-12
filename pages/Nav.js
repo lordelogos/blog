@@ -106,6 +106,11 @@ function Nav({ categories }) {
 						<a>Cryptoelites</a>
 					</Link>
 				</li>
+				<li onClick={() => setToggleNav(false)} className={styles.hiddenDesktop}>
+					<Link href={`/categories/cryptotwitter`}>
+						<a>Cryptotwitter</a>
+					</Link>
+				</li>
 
 				<div className={styles.ul_socials}></div>
 			</ul>

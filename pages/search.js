@@ -14,6 +14,24 @@ function search({ cats, posts }) {
 		post.Title.toLowerCase().includes(keyword)
 	);
 	console.log(result);
+	// const Cryptovolgon = "volgon"
+	// const Cryptognosis = "gnosis"
+	// const Cryptoelites = "elites"
+	// const Cryptotwitter = "twitter"
+
+	const setCategory = (post) => {
+		switch (post.categories[0].category) {
+			case "Cryptovolgon":
+				return styles.volgon;
+			case "Cryptognosis":
+				return styles.gnosis;
+			case "Cryptoelites":
+				return styles.elites;
+			case "Cryptotweet of the week":
+				return styles.twitter;
+		}
+	};
+
 	return (
 		<div>
 			<Head>
@@ -32,18 +50,24 @@ function search({ cats, posts }) {
 					</div>
 					<div className={styles.collection}>
 						{result?.map((post) => (
-							<div key={post.id} className={styles.article}>
-								<p className={styles.article__cat}>
-									{post.categories[0].category}
-								</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 200)} min
-								</p>
+							<div key={post.id} className={`${styles.article}`}>
+								<img
+									src={post.Cover_photo.formats.small.url}
+									alt={post.Title}
+								/>
+								<div>
+									<p className={`${styles.acat} ${setCategory(post)} `}>
+										{post.categories[0].category}
+									</p>
+									<Link href={`/posts/${post.id}`}>
+										<a className={styles.atitle}>{post.Title}</a>
+									</Link>
+									<p className={styles.ainfo}>
+										{post.Author}&nbsp;•&nbsp;&nbsp;
+										<AccessTimeIcon style={{ fontSize: 16 }} />
+										&nbsp;{Math.ceil(post.Body.length / 400)} min read
+									</p>
+								</div>
 							</div>
 						))}
 					</div>

@@ -7,6 +7,24 @@ import PriceTracker from "./PriceTracker";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Button from "@material-ui/core/Button";
 
+{
+	/* <div key={post.id} className={styles.article}>
+								<img
+									src={post.Cover_photo.formats.small.url}
+									alt={post.Title}
+								/>
+								<p className={styles.article__cat}>{volgon.category}</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.article__name}>{post.Title}</a>
+								</Link>
+								<p className={styles.article__info}>
+									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp; {Math.ceil(post.Body.length / 400)} min
+								</p>
+							</div> */
+}
+
 export default function Home({
 	categories,
 	featured,
@@ -15,6 +33,7 @@ export default function Home({
 	elites,
 	twitter,
 }) {
+	console.log(volgon);
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -25,126 +44,140 @@ export default function Home({
 				<Nav categories={categories} />
 				<PriceTracker />
 				<section className={styles.section}>
-					<div className={styles.featured}>
-						<p className={styles.featured__cat}>{featured?.category}</p>
-						<Link href={`/posts/${featured.articles[0].id}`}>
-							<a className={styles.featured__name}>
-								{featured.articles[0].Title}
-							</a>
-						</Link>
-						<p className={styles.featured__info}>
-							{featured.articles[0].Author} -&nbsp;
-							<AccessTimeIcon style={{ fontSize: 16 }} /> &nbsp;
-							{Math.ceil(featured.articles[0].Body.length / 400)} min
+					{/* featured.articles[0] */}
+					<img src={featured.articles[0].Cover_photo.formats.large.url} />
+					<div>
+						<p className={styles.fcategory}>{featured.category}</p>
+						<h2 className={styles.ftitle}>{featured.articles[0].Title}</h2>
+						<p className={styles.fauthor}>
+							{featured.articles[0].Author}&nbsp;&nbsp;•&nbsp;&nbsp;
+							<AccessTimeIcon style={{ fontSize: 20 }} />
+							&nbsp;{Math.ceil(featured.articles[0].Body.length / 200)}&nbsp;min
+							read
 						</p>
 					</div>
 				</section>
-				<section className={styles.collection}>
-					<div className={styles.morediv}>
-						<h2 className={styles.collection__header}>Cryptovolgon</h2>
-						<Link href={`/categories/cryptovolgon`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
-					<p className={styles.collection__desc}>
-						Latest events in the world of Cryptocurrency
-					</p>
-					<div className={styles.collection__articles}>
-						{volgon.articles.slice(0, 3).map((post) => (
-							<div key={post.id} className={styles.article}>
-								<p className={styles.article__cat}>{volgon.category}</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 400)} min
-								</p>
-							</div>
-						))}
-					</div>
-				</section>
 
 				<section className={styles.collection}>
-					<div className={styles.morediv}>
-						<h2 className={styles.collection__header}>Cryptognosis</h2>
-						<Link href={`/categories/cryptognosis`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
-					<p className={styles.collection__desc}>
-						Getting started in the crypto space. Join me!
-					</p>
-					<div className={styles.collection__articles}>
-						{gnosis.articles.slice(0, 3).map((post) => (
-							<div key={post.id} className={styles.article}>
-								<p className={styles.article__cat}>{gnosis.category}</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 400)} min
-								</p>
-							</div>
-						))}
-					</div>
-				</section>
+					<section className={styles.category}>
+						<h2 className={styles.catName}>Cryptovolgon</h2>
+						<p className={styles.catInfo}>Category info</p>
+						<div className={styles.articles}>
+							{volgon.articles.slice(0, 3).map((post) => (
+								<div
+									key={post.id}
+									className={`${styles.article} ${styles.volgon} `}>
+									<img
+										src={post.Cover_photo.formats.small.url}
+										alt={post.Title}
+									/>
+									<div>
+										<p className={`${styles.acat} ${styles.volgon}`}>
+											{volgon.category}
+										</p>
+										<Link href={`/posts/${post.id}`}>
+											<a className={styles.atitle}>{post.Title}</a>
+										</Link>
+										<p className={styles.ainfo}>
+											{post.Author}&nbsp;•&nbsp;&nbsp;
+											<AccessTimeIcon style={{ fontSize: 16 }} />
+											&nbsp;{Math.ceil(post.Body.length / 400)} min read
+										</p>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
 
-				<section className={styles.collection}>
-					<div className={styles.morediv}>
-						<h2 className={styles.collection__header}>Cryptoelites</h2>
-						<Link href={`/categories/cryptoelites`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
-					<p className={styles.collection__desc}>
-						Get exposed to some major players in the crypto space.
-					</p>
-					<div className={styles.collection__articles}>
-						{elites.articles.slice(0, 3).map((post) => (
-							<div key={post.id} className={styles.article}>
-								<p className={styles.article__cat}>{elites.category}</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 400)} min
-								</p>
-							</div>
-						))}
-					</div>
-				</section>
+					<section className={styles.category}>
+						<h2 className={styles.catName}>Cryptognosis</h2>
+						<p className={styles.catInfo}>Category info</p>
+						<div className={styles.articles}>
+							{gnosis.articles.slice(0, 3).map((post) => (
+								<div
+									key={post.id}
+									className={`${styles.article} ${styles.gnosis} `}>
+									<img
+										src={post.Cover_photo.formats.small.url}
+										alt={post.Title}
+									/>
+									<div>
+										<p className={`${styles.acat} ${styles.gnosis} `}>
+											{gnosis.category}
+										</p>
+										<Link href={`/posts/${post.id}`}>
+											<a className={styles.atitle}>{post.Title}</a>
+										</Link>
+										<p className={styles.ainfo}>
+											{post.Author}&nbsp;•&nbsp;&nbsp;
+											<AccessTimeIcon style={{ fontSize: 16 }} />
+											&nbsp;{Math.ceil(post.Body.length / 400)} min read
+										</p>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
 
-				<section className={styles.collection}>
-					<div className={styles.morediv}>
-						<h2 className={styles.collection__header}>Cryptotwitter</h2>
-						<Link href={`/categories/cryptotwitter`}>
-							<a>View more &rarr;</a>
-						</Link>
-					</div>
-					<p className={styles.collection__desc}>
-						Tweet of the week from your favourites in the game.
-					</p>
-					<div className={styles.collection__articles}>
-						{twitter.articles.slice(0, 3).map((post) => (
-							<div key={post.id} className={styles.article}>
-								<p className={styles.article__cat}>{twitter.category}</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 400)} min
-								</p>
-							</div>
-						))}
-					</div>
+					<section className={styles.category}>
+						<h2 className={styles.catName}>Cryptoelites</h2>
+						<p className={styles.catInfo}>Category info</p>
+						<div className={styles.articles}>
+							{elites.articles.slice(0, 3).map((post) => (
+								<div
+									key={post.id}
+									className={`${styles.article} ${styles.elites} `}>
+									<img
+										src={post.Cover_photo.formats.small.url}
+										alt={post.Title}
+									/>
+									<div>
+										<p className={`${styles.acat} ${styles.elites} `}>
+											{elites.category}
+										</p>
+										<Link href={`/posts/${post.id}`}>
+											<a className={styles.atitle}>{post.Title}</a>
+										</Link>
+										<p className={styles.ainfo}>
+											{post.Author}&nbsp;•&nbsp;&nbsp;
+											<AccessTimeIcon style={{ fontSize: 16 }} />
+											&nbsp;{Math.ceil(post.Body.length / 400)} min read
+										</p>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+
+					<section className={styles.category}>
+						<h2 className={styles.catName}>Cryptotwitter</h2>
+						<p className={styles.catInfo}>Category info</p>
+						<div className={styles.articles}>
+							{twitter.articles.slice(0, 3).map((post) => (
+								<div
+									key={post.id}
+									className={`${styles.article} ${styles.twitter} `}>
+									<img
+										src={post.Cover_photo.formats.small.url}
+										alt={post.Title}
+									/>
+									<div>
+										<p className={`${styles.acat} ${styles.twitter} `}>
+											{twitter.category}
+										</p>
+										<Link href={`/posts/${post.id}`}>
+											<a className={styles.atitle}>{post.Title}</a>
+										</Link>
+										<p className={styles.ainfo}>
+											{post.Author}&nbsp;•&nbsp;&nbsp;
+											<AccessTimeIcon style={{ fontSize: 16 }} />
+											&nbsp;{Math.ceil(post.Body.length / 400)} min read
+										</p>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
 				</section>
 				<Footer />
 			</main>

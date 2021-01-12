@@ -19,22 +19,29 @@ function cryptotwitter({ posts, categories }) {
 			</Head>
 			<main>
 				<Nav categories={categories} />
-				<div className={styles.banner}>
+				<div className={`${styles.banner} ${styles.twitter}`}>
 					<h2>{posts.category}</h2>
 					{/* <p>description goes here</p> */}
 				</div>
 				<div className={styles.containerdiv}>
 					{posts.articles.map((post) => (
-						<div key={post.id} className={styles.article}>
-							<p className={styles.article__cat}>{posts.category}</p>
-							<Link href={`/posts/${post.id}`}>
-								<a className={styles.article__name}>{post.Title}</a>
-							</Link>
-							<p className={styles.article__info}>
-								by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-								<AccessTimeIcon style={{ fontSize: 16 }} />
-								&nbsp; {Math.ceil(post.Body.length / 400)} min
-							</p>
+						<div
+							key={post.id}
+							className={`${styles.article} ${styles.twitter} `}>
+							<img src={post.Cover_photo.formats.small.url} alt={post.Title} />
+							<div>
+								<p className={`${styles.acat} ${styles.twitter} `}>
+									{posts.category}
+								</p>
+								<Link href={`/posts/${post.id}`}>
+									<a className={styles.atitle}>{post.Title}</a>
+								</Link>
+								<p className={styles.ainfo}>
+									{post.Author}&nbsp;•&nbsp;&nbsp;
+									<AccessTimeIcon style={{ fontSize: 16 }} />
+									&nbsp;{Math.ceil(post.Body.length / 400)} min read
+								</p>
+							</div>
 						</div>
 					))}
 				</div>
