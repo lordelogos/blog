@@ -27,9 +27,9 @@ export default function Home({
 						__html: `window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
-
 				gtag('config', 'G-7RW1J5GDZ7');`,
-					}}></script>
+					}}
+				/>
 			</Head>
 			<main>
 				<Nav categories={categories} />
