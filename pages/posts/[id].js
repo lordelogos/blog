@@ -50,7 +50,7 @@ function Post({ post, categories }) {
 					<p className={styles.article__info}>
 						by&nbsp;{post.Author}&nbsp; -&nbsp;
 						<AccessTimeIcon style={{ fontSize: 16 }} />
-						&nbsp; {Math.ceil(post.Body.length / 200)} min
+						&nbsp; {Math.ceil(post.Body.length / 400)} min
 					</p>
 				</div>
 				<div

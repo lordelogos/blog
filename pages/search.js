@@ -13,11 +13,6 @@ function search({ cats, posts }) {
 	const result = posts.filter((post) =>
 		post.Title.toLowerCase().includes(keyword)
 	);
-	console.log(result);
-	// const Cryptovolgon = "volgon"
-	// const Cryptognosis = "gnosis"
-	// const Cryptoelites = "elites"
-	// const Cryptotwitter = "twitter"
 
 	const setCategory = (post) => {
 		switch (post.categories[0].category) {

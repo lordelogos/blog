@@ -16,13 +16,19 @@ function Nav({ categories }) {
 		setSearch(e.target.value);
 	};
 
-	const handleKeyPress = (e) => {
-		if (e.keyCode === 13 && search !== "" && search !== null) {
+	const handleSearch = () => {
+		if (search !== "" && search !== null) {
 			setShowSearch(false);
 			Router.push({
 				pathname: "/search",
 				query: { query: search },
 			});
+		}
+	};
+
+	const handleKeyPress = (e) => {
+		if (e.keyCode === 13) {
+			handleSearch();
 		}
 	};
 	return (
@@ -106,7 +112,9 @@ function Nav({ categories }) {
 						<a>Cryptoelites</a>
 					</Link>
 				</li>
-				<li onClick={() => setToggleNav(false)} className={styles.hiddenDesktop}>
+				<li
+					onClick={() => setToggleNav(false)}
+					className={styles.hiddenDesktop}>
 					<Link href={`/categories/cryptotwitter`}>
 						<a>Cryptotwitter</a>
 					</Link>
@@ -148,7 +156,7 @@ function Nav({ categories }) {
 							onChange={handleChange}
 							onKeyDown={handleKeyPress}
 						/>
-						<SearchIcon />
+						<SearchIcon onClick={handleSearch} style={{ cursor: "pointer" }} />
 					</div>
 					<ul>
 						<li onClick={() => setShowSearch(false)}>

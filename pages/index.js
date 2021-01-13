@@ -5,25 +5,6 @@ import Footer from "./Footer";
 import Link from "next/link";
 import PriceTracker from "./PriceTracker";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import Button from "@material-ui/core/Button";
-
-{
-	/* <div key={post.id} className={styles.article}>
-								<img
-									src={post.Cover_photo.formats.small.url}
-									alt={post.Title}
-								/>
-								<p className={styles.article__cat}>{volgon.category}</p>
-								<Link href={`/posts/${post.id}`}>
-									<a className={styles.article__name}>{post.Title}</a>
-								</Link>
-								<p className={styles.article__info}>
-									by&nbsp;<b>{post.Author}</b>&nbsp; -&nbsp;
-									<AccessTimeIcon style={{ fontSize: 16 }} />
-									&nbsp; {Math.ceil(post.Body.length / 400)} min
-								</p>
-							</div> */
-}
 
 export default function Home({
 	categories,
@@ -33,7 +14,6 @@ export default function Home({
 	elites,
 	twitter,
 }) {
-	console.log(volgon);
 	return (
 		<div className={styles.container}>
 			<Head>

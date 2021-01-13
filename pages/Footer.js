@@ -35,6 +35,12 @@ function Footer() {
 
 	return (
 		<div className={styles.footbody}>
+			<Link href="https://wa.link/5vuw74">
+				<a className={styles.whatsapp} target="_blank">
+					<img src="./whatsapp.svg" className={styles.whatsappsvg} alt="" />
+				</a>
+			</Link>
+
 			<div className={styles.container}>
 				<h2 className={styles.container__head}>Newsletter Sign Up</h2>
 				<p className={styles.container__desc}>
