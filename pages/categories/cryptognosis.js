@@ -7,6 +7,7 @@ import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 function cryptognosis({ posts, categories }) {
+	console.log(posts);
 	return (
 		<div>
 			<Head>
@@ -32,7 +33,6 @@ function cryptognosis({ posts, categories }) {
 				<Nav categories={categories} />
 				<div className={`${styles.banner} ${styles.gnosis}`}>
 					<h2>{posts.category}</h2>
-					{/* <p>description goes here</p> */}
 				</div>
 				<div className={styles.containerdiv}>
 					{posts.articles.map((post) => (
