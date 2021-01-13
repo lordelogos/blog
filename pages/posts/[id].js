@@ -41,6 +41,17 @@ function Post({ post, categories }) {
 				<title>{post.Title}</title>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content={post.description} />
+				<script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-7RW1J5GDZ7"></script>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-7RW1J5GDZ7');`,
+					}}></script>
 			</Head>
 
 			<main className={styles.body}>
