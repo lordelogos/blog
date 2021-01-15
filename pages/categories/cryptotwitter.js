@@ -69,7 +69,7 @@ export async function getStaticProps() {
 	const cats = await categories.json();
 
 	const cryptotwitter = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/5"
+		"http://cryptonium-blog.herokuapp.com/categories/9"
 	);
 	const cryptotwitter_articles = await cryptotwitter.json();
 

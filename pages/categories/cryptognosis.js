@@ -7,7 +7,6 @@ import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 function cryptognosis({ posts, categories }) {
-	console.log(posts);
 	return (
 		<div>
 			<Head>

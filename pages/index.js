@@ -53,9 +53,11 @@ export default function Home({
 
 				<section className={styles.collection}>
 					<section className={styles.category}>
-						<h2 className={styles.catName}>Cryptovolgon</h2>
+						<Link href={`/categories/cryptovolgon`}>
+							<a className={styles.catName}>Cryptovolgon</a>
+						</Link>
 						<p className={styles.catInfo}>
-							All the lastest happenings in thee crypto space
+							Get the best and latest news in the cryptomarket space
 						</p>
 						<div className={styles.articles}>
 							{volgon.articles.slice(0, 3).map((post) => (
@@ -85,9 +87,11 @@ export default function Home({
 					</section>
 
 					<section className={styles.category}>
-						<h2 className={styles.catName}>Cryptognosis</h2>
+						<Link href={`/categories/cryptognosis`}>
+							<a className={styles.catName}>Cryptognosis</a>
+						</Link>
 						<p className={styles.catInfo}>
-							Basic education on cryptocurrency and blockchain
+							Get yourself educated with a basic knowledge of what Crypto is
 						</p>
 						<div className={styles.articles}>
 							{gnosis.articles.slice(0, 3).map((post) => (
@@ -117,9 +121,12 @@ export default function Home({
 					</section>
 
 					<section className={styles.category}>
-						<h2 className={styles.catName}>Cryptoelites</h2>
+						<Link href={`/categories/cryptoelites`}>
+							<a className={styles.catName}>Cryptoelites</a>
+						</Link>
 						<p className={styles.catInfo}>
-							Major personalites making impact in the crypto space
+							Get to know the living forces who are making impact in the
+							cryptospace
 						</p>
 						<div className={styles.articles}>
 							{elites.articles.slice(0, 3).map((post) => (
@@ -149,7 +156,9 @@ export default function Home({
 					</section>
 
 					<section className={styles.category}>
-						<h2 className={styles.catName}>Cryptotwitter</h2>
+						<Link href={`/categories/cryptotwitter`}>
+							<a className={styles.catName}>Cryptotwitter</a>
+						</Link>
 						<p className={styles.catInfo}>
 							Stay in touch with weekly tweets from our popular crypto
 							influencers
@@ -212,7 +221,7 @@ export async function getStaticProps() {
 	);
 	const cryptoelites_articles = await cryptoelites.json();
 	const cryptotwitter = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/5"
+		"http://cryptonium-blog.herokuapp.com/categories/9"
 	);
 	const cryptotwitter_articles = await cryptotwitter.json();
 
