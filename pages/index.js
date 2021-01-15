@@ -54,7 +54,9 @@ export default function Home({
 				<section className={styles.collection}>
 					<section className={styles.category}>
 						<h2 className={styles.catName}>Cryptovolgon</h2>
-						<p className={styles.catInfo}>Category info</p>
+						<p className={styles.catInfo}>
+							All the lastest happenings in thee crypto space
+						</p>
 						<div className={styles.articles}>
 							{volgon.articles.slice(0, 3).map((post) => (
 								<div
@@ -84,7 +86,9 @@ export default function Home({
 
 					<section className={styles.category}>
 						<h2 className={styles.catName}>Cryptognosis</h2>
-						<p className={styles.catInfo}>Category info</p>
+						<p className={styles.catInfo}>
+							Basic education on cryptocurrency and blockchain
+						</p>
 						<div className={styles.articles}>
 							{gnosis.articles.slice(0, 3).map((post) => (
 								<div
@@ -114,7 +118,9 @@ export default function Home({
 
 					<section className={styles.category}>
 						<h2 className={styles.catName}>Cryptoelites</h2>
-						<p className={styles.catInfo}>Category info</p>
+						<p className={styles.catInfo}>
+							Major personalites making impact in the crypto space
+						</p>
 						<div className={styles.articles}>
 							{elites.articles.slice(0, 3).map((post) => (
 								<div
@@ -144,7 +150,10 @@ export default function Home({
 
 					<section className={styles.category}>
 						<h2 className={styles.catName}>Cryptotwitter</h2>
-						<p className={styles.catInfo}>Category info</p>
+						<p className={styles.catInfo}>
+							Stay in touch with weekly tweets from our popular crypto
+							influencers
+						</p>
 						<div className={styles.articles}>
 							{twitter.articles.slice(0, 3).map((post) => (
 								<div
