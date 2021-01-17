@@ -264,3 +264,35 @@
 .twitter {
 	background-color: #4169e1;
 }
+
+.notFound {
+	min-height: 60vh;
+	color: black;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.notFound > div:nth-child(1) {
+	font-family: "Staatliches";
+	padding: 10px 0px;
+}
+
+.notFound > div:nth-child(2) {
+	padding: 10px 20px;
+	font-size: 30px;
+	border-left: solid 1px #ccc;
+}
+
+@media screen and (max-width: 600px) {
+	.notFound > div:nth-child(1) {
+		font-size: 32px;
+		font-family: "Staatliches";
+		padding: 10px 10px;
+	}
+
+	.notFound > div:nth-child(2) {
+		padding: 10px;
+	}
+}

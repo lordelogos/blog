@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" width="280" height="250" preserveAspectRatio="xMidYMid">
+<style type="text/css">
+  text {
+    text-anchor: middle; font-size: 100px; opacity: 0;
+  }
+</style>
+<g style="transform-origin: 140px 125px; transform: scale(1.25);">
+<g transform="translate(140,125)">
+  <g transform="translate(0,0)"><g class="path" style="transform: scale(0.91); transform-origin: -42.88px -6.51361px; animation: 1s linear -0.44s infinite normal forwards running breath-c0779e97-a9bb-41fe-abb1-4a1cdbdc615c;"><path d="M42.88-11.92L36.24-11.92L36.24 0L29.04 0L29.04-11.92L5.12-11.92L5.12-17.68L21.84-56.56L28.08-53.92L12.96-18.48L29.04-18.48L29.04-34.40L36.24-34.40L36.24-18.48L42.88-18.48L42.88-11.92" fill="#22484f" stroke="none" stroke-width="none" transform="translate(-66.8800048828125,21.76639567057291)" style="fill: rgb(34, 72, 79);"></path></g><g class="path" style="transform: scale(0.91); transform-origin: 5.11999px -6.2336px; animation: 1s linear -0.22s infinite normal forwards running breath-c0779e97-a9bb-41fe-abb1-4a1cdbdc615c;"><path d="M72.08-56.96L72.08-56.96L72.08-56.96Q76.72-56.96 80.32-55L80.32-55L80.32-55Q83.92-53.04 86.32-49.32L86.32-49.32L86.32-49.32Q88.72-45.60 89.96-40.20L89.96-40.20L89.96-40.20Q91.20-34.80 91.20-27.92L91.20-27.92L91.20-27.92Q91.20-14 86.24-6.52L86.24-6.52L86.24-6.52Q81.28 0.96 71.92 0.96L71.92 0.96L71.92 0.96Q62.56 0.96 57.68-6.64L57.68-6.64L57.68-6.64Q52.80-14.24 52.80-28.08L52.80-28.08L52.80-28.08Q52.80-42 57.76-49.48L57.76-49.48L57.76-49.48Q62.72-56.96 72.08-56.96zM72-50.40L72-50.40L72-50.40Q69.36-50.40 67.20-49.24L67.20-49.24L67.20-49.24Q65.04-48.08 63.52-45.48L63.52-45.48L63.52-45.48Q62-42.88 61.20-38.64L61.20-38.64L61.20-38.64Q60.40-34.40 60.40-28.16L60.40-28.16L60.40-28.16Q60.40-17.04 63.44-11.32L63.44-11.32L63.44-11.32Q66.48-5.60 72-5.60L72-5.60L72-5.60Q74.64-5.60 76.80-6.76L76.80-6.76L76.80-6.76Q78.96-7.92 80.48-10.52L80.48-10.52L80.48-10.52Q82-13.12 82.80-17.36L82.80-17.36L82.80-17.36Q83.60-21.60 83.60-27.84L83.60-27.84L83.60-27.84Q83.60-38.96 80.56-44.68L80.56-44.68L80.56-44.68Q77.52-50.40 72-50.40" fill="#22484f" stroke="none" stroke-width="none" transform="translate(-66.8800048828125,21.76639567057291)" style="fill: rgb(104, 156, 197);"></path></g><g class="path" style="transform: scale(0.91); transform-origin: 53.12px -6.51361px; animation: 1s linear 0s infinite normal forwards running breath-c0779e97-a9bb-41fe-abb1-4a1cdbdc615c;"><path d="M138.88-11.92L132.24-11.92L132.24 0L125.04 0L125.04-11.92L101.12-11.92L101.12-17.68L117.84-56.56L124.08-53.92L108.96-18.48L125.04-18.48L125.04-34.40L132.24-34.40L132.24-18.48L138.88-18.48L138.88-11.92" fill="#22484f" stroke="none" stroke-width="none" transform="translate(-66.8800048828125,21.76639567057291)" style="fill: rgb(94, 111, 163);"></path></g></g>
+</g>
+</g>
+<style id="breath-c0779e97-a9bb-41fe-abb1-4a1cdbdc615c" data-anikit="">@keyframes breath-c0779e97-a9bb-41fe-abb1-4a1cdbdc615c
+{
+  0% {
+    animation-timing-function: cubic-bezier(0.9647,0.2413,-0.0705,0.7911);
+    transform: scale(0.9099999999999999);
+  }
+  51% {
+    animation-timing-function: cubic-bezier(0.9226,0.2631,-0.0308,0.7628);
+    transform: scale(1.02994);
+  }
+  100% {
+    transform: scale(0.9099999999999999);
+  }
+}</style></svg>
