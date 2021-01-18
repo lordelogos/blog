@@ -5,11 +5,10 @@ import Head from "next/head";
 import Marked from "marked";
 import styles from "../../styles/Post.module.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import Button from "@material-ui/core/Button";
+import moment from "moment";
 
 function Post({ post, categories }) {
 	const [load, setLoad] = useState(true);
-
 	const showComment = () => {
 		setLoad(false);
 
@@ -64,6 +63,9 @@ function Post({ post, categories }) {
 						&nbsp; {Math.ceil(post.Body.length / 400)} min
 					</p>
 				</div>
+				<div className={styles.date}>
+					{moment(post.Date_published).format("DD MMMM, YYYY")}
+				</div>
 				<div
 					className={styles.article}
 					dangerouslySetInnerHTML={{ __html: Marked(post.Body) }}></div>
@@ -94,7 +96,7 @@ export async function getStaticProps({ params }) {
 	);
 	const cats = await categories.json();
 	const post = await res.json();
-	return { props: { post: post, categories: cats }, revalidate: 60 };
+	return { props: { post: post, categories: cats }, revalidate: 10 };
 }
 
 export default Post;

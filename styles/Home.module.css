@@ -287,12 +287,16 @@
 
 @media screen and (max-width: 600px) {
 	.notFound > div:nth-child(1) {
-		font-size: 32px;
 		font-family: "Staatliches";
 		padding: 10px 10px;
 	}
 
+	.notFound > div:nth-child(1) > img {
+		width: 150px;
+	}
+
 	.notFound > div:nth-child(2) {
+		font-size: 16px;
 		padding: 10px;
 	}
 }

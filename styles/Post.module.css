@@ -181,3 +181,12 @@ blockquote.twitter-tweet a:focus {
 	margin: 0 auto;
 	width: 90%;
 }
+
+.date {
+	color: var(--secondary);
+	margin: 0 auto;
+	width: 80%;
+	max-width: 775px;
+	margin-bottom: 5vh;
+	font-size: 18px;
+}
