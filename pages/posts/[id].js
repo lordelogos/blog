@@ -84,7 +84,7 @@ export async function getStaticPaths() {
 	const res = await fetch("http://cryptonium-blog.herokuapp.com/articles");
 	const posts = await res.json();
 	const paths = posts.map((post) => `/posts/${post.id}`);
-	return { paths, fallback: false };
+	return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
