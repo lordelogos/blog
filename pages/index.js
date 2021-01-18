@@ -60,7 +60,7 @@ export default function Home({
 							Get the best and latest news in the cryptomarket space
 						</p>
 						<div className={styles.articles}>
-							{volgon.articles.slice(0, 3).map((post) => (
+							{volgon.articles.slice(-3).map((post) => (
 								<div
 									key={post.id}
 									className={`${styles.article} ${styles.volgon} `}>
@@ -94,7 +94,7 @@ export default function Home({
 							Get yourself educated with a basic knowledge of what Crypto is
 						</p>
 						<div className={styles.articles}>
-							{gnosis.articles.slice(0, 3).map((post) => (
+							{gnosis.articles.slice(-3).map((post) => (
 								<div
 									key={post.id}
 									className={`${styles.article} ${styles.gnosis} `}>
@@ -129,7 +129,7 @@ export default function Home({
 							cryptospace
 						</p>
 						<div className={styles.articles}>
-							{elites.articles.slice(0, 3).map((post) => (
+							{elites.articles.slice(-3).map((post) => (
 								<div
 									key={post.id}
 									className={`${styles.article} ${styles.elites} `}>
@@ -164,7 +164,7 @@ export default function Home({
 							influencers
 						</p>
 						<div className={styles.articles}>
-							{twitter.articles.slice(0, 3).map((post) => (
+							{twitter.articles.slice(-3).map((post) => (
 								<div
 									key={post.id}
 									className={`${styles.article} ${styles.twitter} `}>
