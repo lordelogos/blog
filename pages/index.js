@@ -234,6 +234,6 @@ export async function getStaticProps() {
 			elites: cryptoelites_articles,
 			twitter: cryptotwitter_articles,
 		},
-		revalidate: 60,
+		revalidate: 50,
 	};
-}
+}		
