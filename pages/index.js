@@ -8,17 +8,20 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 export default function Home({
 	categories,
-	featured,
-	volgon,
-	gnosis,
-	elites,
-	twitter,
+	latest,
+	// featured,
+	// volgon,
+	// gnosis,
+	// elites,
+	// twitter,
 }) {
-	console.log(featured);
+	console.log(latest);
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Cryptonium Blog</title>
+				<title>
+					Your guide to Blockchain, cryptocurrency and education - Cryptonium
+				</title>
 				<link rel="icon" href="/favicon.ico" />
 				<script
 					async
@@ -36,167 +39,44 @@ export default function Home({
 				<Nav categories={categories} />
 				<PriceTracker />
 				<section className={styles.section}>
-					{/* featured.articles[0] */}
-					<img
-						src={featured.articles[0].Cover_photo.formats.large.url}
-						srcSet={`${featured.articles[0].Cover_photo.formats.small.url} 480w, ${featured.articles[0].Cover_photo.formats.medium.url} 768w, ${featured.articles[0].Cover_photo.formats.large.url} 1200w `}
-						sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1200px"
-					/>
-
-					<div>
-						<p className={styles.fcategory}>{featured.category}</p>
-						<Link href={`/posts/${featured.articles[0].id}`}>
-							<a className={styles.ftitle}>{featured.articles[0].Title}</a>
-						</Link>
-						<p className={styles.fauthor}>
-							{featured.articles[0].Author}&nbsp;&nbsp;•&nbsp;&nbsp;
-							<AccessTimeIcon style={{ fontSize: 20 }} />
-							&nbsp;{Math.ceil(featured.articles[0].Body.length / 200)}&nbsp;min
-							read
-						</p>
+					<div className={styles.section__latest}>
+						<h2>Latest Articles</h2>
+						<p>Our insight to today's latest news</p>
+						<div className={styles.section__latestArticles}>
+							<div className={styles.section__latestArticles__article}>
+								<img />
+								<p className={styles.section__latestArticles__title}>
+									Article title: This is were the article title goes
+								</p>
+								<div>
+									<p>Category</p>
+									<p>Date of publishing</p>
+								</div>
+							</div>
+							<div className={styles.section__latestArticles__article}>
+								<img />
+								<p className={styles.section__latestArticles__title}>
+									Article title: This is were the article title goes
+								</p>
+								<div>
+									<p>Category</p>
+									<p>Date of publishing</p>
+								</div>
+							</div>
+							<div className={styles.section__latestArticles__article}>
+								<img />
+								<p className={styles.section__latestArticles__title}>
+									Article title: This is were the article title goes
+								</p>
+								<div>
+									<p>Category</p>
+									<p>Date of publishing</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
-
-				{/* <section className={styles.collection}>
-					<section className={styles.category}>
-						<Link href={`/categories/cryptovolgon`}>
-							<a className={styles.catName}>Cryptovolgon</a>
-						</Link>
-						<p className={styles.catInfo}>
-							Get the best and latest news in the cryptomarket space
-						</p>
-						<div className={styles.articles}>
-							{volgon.articles.slice(-3).map((post) => (
-								<div
-									key={post.id}
-									className={`${styles.article} ${styles.volgon} `}>
-									<img
-										src={post.Cover_photo.formats.small.url}
-										alt={post.Title}
-									/>
-									<div>
-										<p className={`${styles.acat} ${styles.volgon}`}>
-											{volgon.category}
-										</p>
-										<Link href={`/posts/${post.id}`}>
-											<a className={styles.atitle}>{post.Title}</a>
-										</Link>
-										<p className={styles.ainfo}>
-											{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
-											<AccessTimeIcon style={{ fontSize: 16 }} />
-											&nbsp;{Math.ceil(post.Body.length / 400)} min read
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-					</section>
-
-					<section className={styles.category}>
-						<Link href={`/categories/cryptognosis`}>
-							<a className={styles.catName}>Cryptognosis</a>
-						</Link>
-						<p className={styles.catInfo}>
-							Get yourself educated with a basic knowledge of what Crypto is
-						</p>
-						<div className={styles.articles}>
-							{gnosis.articles.slice(-3).map((post) => (
-								<div
-									key={post.id}
-									className={`${styles.article} ${styles.gnosis} `}>
-									<img
-										src={post.Cover_photo.formats.small.url}
-										alt={post.Title}
-									/>
-									<div>
-										<p className={`${styles.acat} ${styles.gnosis} `}>
-											{gnosis.category}
-										</p>
-										<Link href={`/posts/${post.id}`}>
-											<a className={styles.atitle}>{post.Title}</a>
-										</Link>
-										<p className={styles.ainfo}>
-											{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
-											<AccessTimeIcon style={{ fontSize: 16 }} />
-											&nbsp;{Math.ceil(post.Body.length / 400)} min read
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-					</section>
-
-					<section className={styles.category}>
-						<Link href={`/categories/cryptoelites`}>
-							<a className={styles.catName}>Cryptoelites</a>
-						</Link>
-						<p className={styles.catInfo}>
-							Get to know the living forces who are making impact in the
-							cryptospace
-						</p>
-						<div className={styles.articles}>
-							{elites.articles.slice(-3).map((post) => (
-								<div
-									key={post.id}
-									className={`${styles.article} ${styles.elites} `}>
-									<img
-										src={post.Cover_photo.formats.small.url}
-										alt={post.Title}
-									/>
-									<div>
-										<p className={`${styles.acat} ${styles.elites} `}>
-											{elites.category}
-										</p>
-										<Link href={`/posts/${post.id}`}>
-											<a className={styles.atitle}>{post.Title}</a>
-										</Link>
-										<p className={styles.ainfo}>
-											{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
-											<AccessTimeIcon style={{ fontSize: 16 }} />
-											&nbsp;{Math.ceil(post.Body.length / 400)} min read
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-					</section>
-
-					<section className={styles.category}>
-						<Link href={`/categories/cryptotwitter`}>
-							<a className={styles.catName}>Cryptotwitter</a>
-						</Link>
-						<p className={styles.catInfo}>
-							Stay in touch with weekly tweets from our popular crypto
-							influencers
-						</p>
-						<div className={styles.articles}>
-							{twitter.articles.slice(-3).map((post) => (
-								<div
-									key={post.id}
-									className={`${styles.article} ${styles.twitter} `}>
-									<img
-										src={post.Cover_photo.formats.small.url}
-										alt={post.Title}
-									/>
-									<div>
-										<p className={`${styles.acat} ${styles.twitter} `}>
-											{twitter.category}
-										</p>
-										<Link href={`/posts/${post.id}`}>
-											<a className={styles.atitle}>{post.Title}</a>
-										</Link>
-										<p className={styles.ainfo}>
-											{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
-											<AccessTimeIcon style={{ fontSize: 16 }} />
-											&nbsp;{Math.ceil(post.Body.length / 400)} min read
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-					</section>
-				</section> 
-				<Footer /> */}
+				{/* <Footer /> */}
 			</main>
 		</div>
 	);
@@ -213,32 +93,40 @@ export async function getStaticProps() {
 	);
 	const cats = await categories.json();
 
-	// for articles
-	const cryptovolgon = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/1"
+	// for latest articles
+	const latest_articles = await fetch(
+		"http://cryptonium-blog.herokuapp.com/articles?_sort=published_at:desc"
 	);
-	const cryptovolgon_articles = await cryptovolgon.json();
-	const cryptognosis = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/2"
-	);
-	const cryptognosis_articles = await cryptognosis.json();
-	const cryptoelites = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/3"
-	);
-	const cryptoelites_articles = await cryptoelites.json();
-	const cryptotwitter = await fetch(
-		"http://cryptonium-blog.herokuapp.com/categories/9"
-	);
-	const cryptotwitter_articles = await cryptotwitter.json();
+
+	const latest_articles_res = await latest_articles.json();
+
+	// // for articles
+	// const cryptovolgon = await fetch(
+	// 	"http://cryptonium-blog.herokuapp.com/categories/1"
+	// );
+	// const cryptovolgon_articles = await cryptovolgon.json();
+	// const cryptognosis = await fetch(
+	// 	"http://cryptonium-blog.herokuapp.com/categories/2"
+	// );
+	// const cryptognosis_articles = await cryptognosis.json();
+	// const cryptoelites = await fetch(
+	// 	"http://cryptonium-blog.herokuapp.com/categories/3"
+	// );
+	// const cryptoelites_articles = await cryptoelites.json();
+	// const cryptotwitter = await fetch(
+	// 	"http://cryptonium-blog.herokuapp.com/categories/9"
+	// );
+	// const cryptotwitter_articles = await cryptotwitter.json();
 
 	return {
 		props: {
 			categories: cats,
-			featured: featured,
-			volgon: cryptovolgon_articles,
-			gnosis: cryptognosis_articles,
-			elites: cryptoelites_articles,
-			twitter: cryptotwitter_articles,
+			latest: latest_articles_res,
+			// featured: featured,
+			// volgon: cryptovolgon_articles,
+			// gnosis: cryptognosis_articles,
+			// elites: cryptoelites_articles,
+			// twitter: cryptotwitter_articles,
 		},
 		revalidate: 50,
 	};

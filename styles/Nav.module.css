@@ -29,8 +29,14 @@
 .nav > ul > li {
 	margin-right: 18px;
 	font-size: 22px;
-	font-weight: 600;
+	font-weight: 500;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 800px) and (min-width: 780px) {
+	.nav > ul > li {
+		margin-right: 8px;
+	}
 }
 
 .nav > ul > li:last-child {
@@ -136,7 +142,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
 	.branding {
 		flex: 1;
 		margin: 0 auto;

@@ -1,6 +1,7 @@
 .price {
 	margin: 0 auto;
-	max-width: 775px;
+	width: 100%;
+	/* max-width: 775px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,6 +41,7 @@
 
 .coin > h2 {
 	padding: 0 5px;
+	font-size: 18px;
 }
 
 .coin > h2:nth-child(1) {
