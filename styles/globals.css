@@ -4,6 +4,10 @@
 	/* --primary: #030927; */
 	--primary: white;
 	--secondary: #0d1137;
+	--volgon: #fce38a;
+	--gnosis: #3abc98;
+	--elites: #fc5185;
+	--twitter: #4169e1;
 }
 html,
 body {
@@ -37,5 +41,21 @@ h5,
 h6,
 a {
 	font-family: "Poppins", sans-serif;
-	letter-spacing: 0.5px;
+}
+
+.volgon {
+	background-color: var(--volgon) !important;
+	color: black !important;
+}
+
+.gnosis {
+	background-color: var(--gnosis) !important;
+}
+
+.elites {
+	background-color: var(--elites) !important;
+}
+
+.twitter {
+	background-color: var(--twitter) !important;
 }

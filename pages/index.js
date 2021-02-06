@@ -15,7 +15,18 @@ export default function Home({
 	// elites,
 	// twitter,
 }) {
-	console.log(latest);
+	const catPick = (cat) => {
+		switch (cat) {
+			case "Cryptovolgon":
+				return "volgon";
+			case "Cryptoelites":
+				return "elites";
+			case "Cryptognosis":
+				return "gnosis";
+			case "Cryptotweet of the week":
+				return "twitter";
+		}
+	};
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -41,42 +52,32 @@ export default function Home({
 				<section className={styles.section}>
 					<div className={styles.section__latest}>
 						<h2>Latest Articles</h2>
-						<p>Our insight to today's latest news</p>
+						<p>Our insight on today's latest news</p>
+
 						<div className={styles.section__latestArticles}>
-							<div className={styles.section__latestArticles__article}>
-								<img />
-								<p className={styles.section__latestArticles__title}>
-									Article title: This is were the article title goes
-								</p>
-								<div>
-									<p>Category</p>
-									<p>Date of publishing</p>
+							{latest.slice(0, 6).map((article) => (
+								<div className={styles.section__latestArticles__article}>
+									<img src={article.Cover_photo.formats.small.url} />
+									<Link href={`/posts/${article.id}`}>
+										<a className={styles.section__latestArticles__title}>
+											{article.Title}
+										</a>
+									</Link>
+									<div>
+										<p className={`${catPick(article.categories[0].category)}`}>
+											{article.categories[0].category}
+										</p>
+										<p>Date of publishing</p>
+									</div>
+									<Link href={`/posts/${article.id}`}>
+										<a className={styles.viewMoreBtn}>View more</a>
+									</Link>
 								</div>
-							</div>
-							<div className={styles.section__latestArticles__article}>
-								<img />
-								<p className={styles.section__latestArticles__title}>
-									Article title: This is were the article title goes
-								</p>
-								<div>
-									<p>Category</p>
-									<p>Date of publishing</p>
-								</div>
-							</div>
-							<div className={styles.section__latestArticles__article}>
-								<img />
-								<p className={styles.section__latestArticles__title}>
-									Article title: This is were the article title goes
-								</p>
-								<div>
-									<p>Category</p>
-									<p>Date of publishing</p>
-								</div>
-							</div>
+							))}
 						</div>
 					</div>
 				</section>
-				{/* <Footer /> */}
+				<Footer />
 			</main>
 		</div>
 	);

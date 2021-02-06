@@ -17,6 +17,19 @@
 	height: 50px;
 }
 
+@media screen and (max-width: 400px) {
+	.whatsapp {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+	}
+
+	.whatsappsvg {
+		width: 40px;
+		height: 40px;
+	}
+}
+
 .container {
 	margin: 0 auto;
 	width: 90%;
@@ -26,7 +39,7 @@
 }
 
 .container__head {
-	font-size: 32px;
+	font-size: 24px;
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -142,7 +155,7 @@
 	justify-content: space-between;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
 	.footer > div {
 		flex-direction: column;
 	}
