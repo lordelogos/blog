@@ -11,7 +11,7 @@ function cryptotwitter({ posts, categories }) {
 		<div>
 			<Head>
 				<title>{posts.category}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
 					content="tweet of the week from high profiled crypto traders and investors"

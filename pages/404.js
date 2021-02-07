@@ -10,7 +10,7 @@ export default function Home({ categories }) {
 		<div className={styles.container}>
 			<Head>
 				<title>Cryptonium Blog</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<script
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-7RW1J5GDZ7"></script>

@@ -31,8 +31,11 @@ function search({ cats, posts }) {
 		<div>
 			<Head>
 				<title>Search results for {keyword}</title>
-				<link rel="icon" href="/favicon.ico" />
-				<meta name="description" content="Your favourite crypto blog" />
+				<link rel="icon" href="/favicon.svg" />
+				<meta
+					name="description"
+					content="Your Number 1 blog for all news in the cryptocurrency space, education and finance - Cryptonium"
+				/>
 				<script
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-7RW1J5GDZ7"></script>

@@ -11,7 +11,7 @@ function cryptoelites({ posts, categories }) {
 		<div>
 			<Head>
 				<title>{posts.category}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
 					content="High profile players in the cryptocurrency space"

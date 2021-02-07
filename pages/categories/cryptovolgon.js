@@ -11,7 +11,7 @@ function cryptovolgon({ posts, categories }) {
 		<div>
 			<Head>
 				<title>{posts.category}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<meta name="description" content="latest events in cryptocurrency" />
 				<script
 					async

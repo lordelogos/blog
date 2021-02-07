@@ -11,7 +11,7 @@ function cryptognosis({ posts, categories }) {
 		<div>
 			<Head>
 				<title>{posts.category}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
 					content="Begginner's guide to the world of cryptocurrency"
