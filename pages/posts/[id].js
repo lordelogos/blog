@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import Head from "next/head";
+import Link from "next/link";
 import Marked from "marked";
 import styles from "../../styles/Post.module.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -73,6 +74,9 @@ function Post({ post, categories }) {
 					{load && <button onClick={showComment}>Load Comments</button>}
 					<div id="disqus_thread" className={styles.disqus}></div>
 				</div>
+				<Link href={`/`}>
+					<a className={styles.goBackHomeBtn}>Go back home</a>
+				</Link>
 				<Footer />
 			</main>
 		</div>

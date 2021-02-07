@@ -98,7 +98,7 @@ export default function Home({
 								<div key={article.id} className={styles.catArticles}>
 									<img src={article.Cover_photo.formats.thumbnail.url} />
 									<div>
-										<h2>{article.Title}</h2>
+										<h2>{article.Title.toLowerCase()}</h2>
 										<p>
 											{moment(article.Date_published).format("DD MMMM, YYYY")}
 										</p>
@@ -110,19 +110,47 @@ export default function Home({
 							<a>More on Cryptovolgon &rarr;</a>
 						</div>
 					</div>
+
+					<div className={styles.chartSection}>
+						<div className={styles.chartContainer}>
+							<div className={styles.chart}>
+								<iframe
+									src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=145&pref_coin_id=1505"
+									width="100%"
+									height="auto"
+									scrolling="auto"
+									marginwidth="0"
+									marginheight="0"
+									frameborder="0"
+									border="0"
+									className={styles.chartIframe}></iframe>
+							</div>
+							<div className={styles.attribContainer}>
+								<a
+									href="https://coinlib.io"
+									target="_blank"
+									className={styles.attrib}>
+									Cryptocurrency Prices
+								</a>
+								&nbsp;by Coinlib
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section className={styles.categories}>
 					<div className={styles.category}>
 						<h2>Crytognosis</h2>
 						<p>
 							Get yourself educated with a basic knowledge of what Crypto is
 						</p>
 
-						{/* articles fetched will show here */}
 						<div className={styles.catArticlesContainer}>
 							{gnosis.articles.slice(-3).map((article) => (
 								<div key={article.id} className={styles.catArticles}>
 									<img src={article.Cover_photo.formats.thumbnail.url} />
 									<div>
-										<h2>{article.Title}</h2>
+										<h2>{article.Title.toLowerCase()}</h2>
 										<p>
 											{moment(article.Date_published).format("DD MMMM, YYYY")}
 										</p>
@@ -135,6 +163,36 @@ export default function Home({
 						</div>
 					</div>
 
+					<div className={styles.chartSection}>
+						<div className={styles.chartContainer2}>
+							<div className={styles.chart2}>
+								<iframe
+									src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505"
+									width="100%"
+									height="auto"
+									scrolling="auto"
+									marginwidth="0"
+									marginheight="0"
+									frameborder="0"
+									border="0"
+									className={styles.chartIframe2}></iframe>
+							</div>
+							<div className={styles.attribContainer2}>
+								<a
+									href="https://coinlib.io"
+									target="_blank"
+									className={styles.attrib2}>
+									Cryptocurrency Prices
+								</a>
+								&nbsp;by Coinlib
+							</div>
+						</div>
+					</div>
+				</section>
+				{/* 
+				<section>
+				
+
 					<div className={styles.category}>
 						<h2>Cryptoelites</h2>
 						<p>
@@ -142,13 +200,12 @@ export default function Home({
 							cryptospace
 						</p>
 
-						{/* articles fetched will show here */}
 						<div className={styles.catArticlesContainer}>
 							{elites.articles.slice(-3).map((article) => (
 								<div key={article.id} className={styles.catArticles}>
 									<img src={article.Cover_photo.formats.thumbnail.url} />
 									<div>
-										<h2>{article.Title}</h2>
+										<h2>{article.Title.toLowerCase()}</h2>
 										<p>
 											{moment(article.Date_published).format("DD MMMM, YYYY")}
 										</p>
@@ -168,13 +225,12 @@ export default function Home({
 							influencers
 						</p>
 
-						{/* articles fetched will show here */}
 						<div className={styles.catArticlesContainer}>
 							{twitter.articles.slice(-3).map((article) => (
 								<div key={article.id} className={styles.catArticles}>
 									<img src={article.Cover_photo.formats.thumbnail.url} />
 									<div>
-										<h2>{article.Title}</h2>
+										<h2>{article.Title.toLowerCase()}</h2>
 										<p>
 											{moment(article.Date_published).format("DD MMMM, YYYY")}
 										</p>
@@ -186,8 +242,8 @@ export default function Home({
 							<a>More on Cryptotwitter &rarr;</a>
 						</div>
 					</div>
-				</section>
-				{/* <Footer /> */}
+				</section> */}
+				<Footer />
 			</main>
 		</div>
 	);
