@@ -72,7 +72,7 @@ function search({ cats, posts }) {
 										<a className={styles.atitle}>{post.Title}</a>
 									</Link>
 									<p className={styles.ainfo}>
-										{post.Author}&nbsp;•&nbsp;&nbsp;
+										{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
 										<AccessTimeIcon style={{ fontSize: 16 }} />
 										&nbsp;{Math.ceil(post.Body.length / 400)} min read
 									</p>
