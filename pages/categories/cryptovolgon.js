@@ -42,10 +42,10 @@ function cryptovolgon({ posts, categories }) {
 									{posts.category}
 								</p>
 								<Link href={`/posts/${post.id}`}>
-									<a className={styles.atitle}>{post.Title}</a>
+									<a className={styles.atitle}>{post.Title.toLowerCase()}</a>
 								</Link>
 								<p className={styles.ainfo}>
-									{post.Author}&nbsp;•&nbsp;&nbsp;
+									{post.Author.toLowerCase()}&nbsp;•&nbsp;&nbsp;
 									<AccessTimeIcon style={{ fontSize: 16 }} />
 									&nbsp;{Math.ceil(post.Body.length / 400)} min read
 								</p>
