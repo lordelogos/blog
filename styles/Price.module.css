@@ -1,57 +1,50 @@
-.price {
-	margin: 0 auto;
+.priceTrackerContainer {
+	height: 42px;
+	background-color: #ffffff;
+	overflow: hidden;
+	box-sizing: border-box;
+	/* border: 1px solid #56667f; */
+	border-radius: 4px;
+	text-align: right;
+	line-height: 14px;
+	block-size: 42px;
+	font-size: 12px;
+	font-feature-settings: normal;
+	text-size-adjust: 100%;
+	/* box-shadow: inset 0 -20px 0 0 #56667f; */
+	padding: 1px;
+	padding: 0px;
+	margin: 0px;
 	width: 100%;
-	/* max-width: 775px; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
-.coin_container {
-	padding: 5px 0;
-	display: flex;
-	overflow-y: hidden;
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-	scrollbar-width: 0;
-	scrollbar-color: transparent transparent;
+.priceTracker {
+	height: 40px;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
 }
 
-.coin_container::-webkit-scrollbar {
-	display: none;
+.priceTrackerIframe {
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.coin_container {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+.attribPrice {
+	color: #ffffff;
+	line-height: 5px;
+	font-weight: 400;
+	font-size: 2px;
+	box-sizing: border-box;
+	padding: 0;
+	width: 100%;
+	font-family: Verdana, Tahoma, Arial, sans-serif;
 }
 
-.coin {
-	display: flex;
-	align-items: center;
-	border-right: solid 1px;
-	scroll-snap-align: center;
-}
-
-.coin:last-child {
-	border-right: none;
-}
-
-.coin > h2 {
-	padding: 0 5px;
-	font-size: 18px;
-}
-
-.coin > h2:nth-child(1) {
-	color: var(--secondary);
-}
-
-.gain {
-	color: #3abc98;
-}
-
-.loss {
-	color: #fe4a68;
+.attrib {
+	font-weight: 500;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 2px;
 }

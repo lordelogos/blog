@@ -46,6 +46,10 @@ export default function Home({
 				gtag('config', 'G-7RW1J5GDZ7');`,
 					}}
 				/>
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charSet="utf-8"></script>
 			</Head>
 			<main>
 				<Nav categories={categories} />
@@ -95,19 +99,23 @@ export default function Home({
 						{/* articles fetched will show here */}
 						<div className={styles.catArticlesContainer}>
 							{volgon.articles.slice(-3).map((article) => (
-								<div key={article.id} className={styles.catArticles}>
-									<img src={article.Cover_photo.formats.thumbnail.url} />
-									<div>
-										<h2>{article.Title.toLowerCase()}</h2>
-										<p>
-											{moment(article.Date_published).format("DD MMMM, YYYY")}
-										</p>
-									</div>
-								</div>
+								<Link key={article.id} href={`/posts/${article.id}`}>
+									<a className={styles.catArticles}>
+										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<div>
+											<h2>{article.Title.toLowerCase()}</h2>
+											<p>
+												{moment(article.Date_published).format("DD MMMM, YYYY")}
+											</p>
+										</div>
+									</a>
+								</Link>
 							))}
 						</div>
 						<div className={styles.moreOnCat}>
-							<a>More on Cryptovolgon &rarr;</a>
+							<Link href={`/categories/cryptovolgon`}>
+								<a>More on Cryptovolgon &rarr;</a>
+							</Link>
 						</div>
 					</div>
 
@@ -147,23 +155,27 @@ export default function Home({
 
 						<div className={styles.catArticlesContainer}>
 							{gnosis.articles.slice(-3).map((article) => (
-								<div key={article.id} className={styles.catArticles}>
-									<img src={article.Cover_photo.formats.thumbnail.url} />
-									<div>
-										<h2>{article.Title.toLowerCase()}</h2>
-										<p>
-											{moment(article.Date_published).format("DD MMMM, YYYY")}
-										</p>
-									</div>
-								</div>
+								<Link key={article.id} href={`/posts/${article.id}`}>
+									<a className={styles.catArticles}>
+										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<div>
+											<h2>{article.Title.toLowerCase()}</h2>
+											<p>
+												{moment(article.Date_published).format("DD MMMM, YYYY")}
+											</p>
+										</div>
+									</a>
+								</Link>
 							))}
 						</div>
 						<div className={styles.moreOnCat}>
-							<a>More on Cryptognosis &rarr;</a>
+							<Link href={`/categories/cryptognosis`}>
+								<a>More on Cryptognosis &rarr;</a>
+							</Link>
 						</div>
 					</div>
 
-					<div className={styles.chartSection}>
+					<div className={styles.chartSection2}>
 						<div className={styles.chartContainer2}>
 							<div className={styles.chart2}>
 								<iframe
@@ -189,10 +201,8 @@ export default function Home({
 						</div>
 					</div>
 				</section>
-				{/* 
-				<section>
-				
 
+				<section className={styles.categories}>
 					<div className={styles.category}>
 						<h2>Cryptoelites</h2>
 						<p>
@@ -202,22 +212,55 @@ export default function Home({
 
 						<div className={styles.catArticlesContainer}>
 							{elites.articles.slice(-3).map((article) => (
-								<div key={article.id} className={styles.catArticles}>
-									<img src={article.Cover_photo.formats.thumbnail.url} />
-									<div>
-										<h2>{article.Title.toLowerCase()}</h2>
-										<p>
-											{moment(article.Date_published).format("DD MMMM, YYYY")}
-										</p>
-									</div>
-								</div>
+								<Link key={article.id} href={`/posts/${article.id}`}>
+									<a className={styles.catArticles}>
+										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<div>
+											<h2>{article.Title.toLowerCase()}</h2>
+											<p>
+												{moment(article.Date_published).format("DD MMMM, YYYY")}
+											</p>
+										</div>
+									</a>
+								</Link>
 							))}
 						</div>
 						<div className={styles.moreOnCat}>
-							<a>More on Cryptoelites &rarr;</a>
+							<Link href={`/categories/cryptoelites`}>
+								<a>More on Cryptoelites &rarr;</a>
+							</Link>
 						</div>
 					</div>
 
+					<div className={styles.chartSection3}>
+						<h1>Cryptocurrency converter</h1>
+						<div className={styles.chartContainer3}>
+							<div className={styles.chart3}>
+								<iframe
+									src="https://widget.coinlib.io/widget?type=converter&theme=dark"
+									width="100%"
+									height="310px"
+									scrolling="auto"
+									marginwidth="0"
+									marginheight="0"
+									frameborder="0"
+									border="0"
+									className={styles.chartIframe3}></iframe>
+							</div>
+							<div className={styles.attribContainer3}>
+								<a
+									href="https://coinlib.io"
+									target="_blank"
+									className={styles.attrib3}>
+									Cryptocurrency Prices
+								</a>
+								&nbsp;by Coinlib
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section className={styles.categories}>
 					<div className={styles.category}>
 						<h2>Cryptotwitter</h2>
 						<p>
@@ -227,22 +270,46 @@ export default function Home({
 
 						<div className={styles.catArticlesContainer}>
 							{twitter.articles.slice(-3).map((article) => (
-								<div key={article.id} className={styles.catArticles}>
-									<img src={article.Cover_photo.formats.thumbnail.url} />
-									<div>
-										<h2>{article.Title.toLowerCase()}</h2>
-										<p>
-											{moment(article.Date_published).format("DD MMMM, YYYY")}
-										</p>
-									</div>
-								</div>
+								<Link key={article.id} href={`/posts/${article.id}`}>
+									<a className={styles.catArticles}>
+										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<div>
+											<h2>{article.Title.toLowerCase()}</h2>
+											<p>
+												{moment(article.Date_published).format("DD MMMM, YYYY")}
+											</p>
+										</div>
+									</a>
+								</Link>
 							))}
 						</div>
 						<div className={styles.moreOnCat}>
-							<a>More on Cryptotwitter &rarr;</a>
+							<Link href={`/categories/cryptotwitter`}>
+								<a>More on Cryptotwitter &rarr;</a>
+							</Link>
 						</div>
 					</div>
-				</section> */}
+
+					<div className={styles.chartSection3}>
+						<div className={styles.twitter}>
+							<h2>Follow us on Twitter</h2>
+							<a
+								href="https://twitter.com/_Cryptonium?ref_src=twsrc%5Etfw"
+								class="twitter-follow-button"
+								data-show-count="false">
+								Follow @_Cryptonium
+							</a>
+
+							<h2>Start a conversation</h2>
+							<a
+								href="https://twitter.com/intent/tweet?screen_name=_Cryptonium&ref_src=twsrc%5Etfw"
+								class="twitter-mention-button"
+								data-show-count="false">
+								Tweet to @_Cryptonium
+							</a>
+						</div>
+					</div>
+				</section>
 				<Footer />
 			</main>
 		</div>
