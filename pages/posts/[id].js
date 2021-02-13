@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import PriceTracker from "../PriceTracker";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import Head from "next/head";
@@ -9,10 +10,9 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import moment from "moment";
 
 function Post({ post, categories }) {
-	const [load, setLoad] = useState(true);
-	const showComment = () => {
-		setLoad(false);
+	const [load, setLoad] = useState(false);
 
+	useEffect(() => {
 		window.disqus_config = function () {
 			this.page.url = window.location.href;
 			this.page.identifier = post.id;
@@ -34,12 +34,13 @@ function Post({ post, categories }) {
 				},
 			});
 		};
-	};
+	}, []);
+
 	return (
 		<div>
 			<Head>
-				<title>{post.Title}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<title>{post.Title} - Cryptonium</title>
+				<link rel="icon" href="/favicon.svg" />
 				<meta name="description" content={post.description} />
 				<script
 					async
@@ -52,10 +53,15 @@ function Post({ post, categories }) {
 
 				gtag('config', 'G-7RW1J5GDZ7');`,
 					}}></script>
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charSet="utf-8"></script>
 			</Head>
 
 			<main className={styles.body}>
 				<Nav categories={categories} />
+				<PriceTracker />
 				<div className={styles.articleName}>
 					<h1>{post.Title}</h1>
 					<p className={styles.article__info}>
@@ -71,7 +77,6 @@ function Post({ post, categories }) {
 					className={styles.article}
 					dangerouslySetInnerHTML={{ __html: Marked(post.Body) }}></div>
 				<div className={styles.commentSection}>
-					{load && <button onClick={showComment}>Load Comments</button>}
 					<div id="disqus_thread" className={styles.disqus}></div>
 				</div>
 				<Link href={`/`}>

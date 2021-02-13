@@ -6,6 +6,7 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import styles from "../styles/Search.module.css";
 import Head from "next/head";
 import Footer from "./Footer";
+import PriceTracker from "./PriceTracker";
 
 function search({ cats, posts }) {
 	const router = useRouter();
@@ -30,7 +31,7 @@ function search({ cats, posts }) {
 	return (
 		<div>
 			<Head>
-				<title>Search results for {keyword}</title>
+				<title>{keyword} - Cryptonium Search</title>
 				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
@@ -50,6 +51,7 @@ function search({ cats, posts }) {
 			</Head>
 			<main>
 				<Nav categories={cats} />
+				<PriceTracker />
 				<section className={styles.search}>
 					<div className={styles.search__intro}>
 						<p>
@@ -62,7 +64,7 @@ function search({ cats, posts }) {
 							<div key={post.id} className={`${styles.article}`}>
 								<img
 									src={post.Cover_photo.formats.small.url}
-									alt={post.Title}
+									alt={`${post.Title} - Cryptonium`}
 								/>
 								<div>
 									<p className={`${styles.acat} ${setCategory(post)} `}>

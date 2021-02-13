@@ -15,7 +15,6 @@ export default function Home({
 	elites,
 	twitter,
 }) {
-	console.log(volgon.articles);
 	const catPick = (cat) => {
 		switch (cat) {
 			case "Cryptovolgon":
@@ -68,6 +67,7 @@ export default function Home({
 										// srcSet={`${article.Cover_photo.formats.thumbnail.url} 600w, ${article.Cover_photo.formats.small.url}768w`}
 										// sizes="(max-width: 600px) 600px, 768px"
 										src={article.Cover_photo.formats.small.url}
+										alt={`${article.Title} - Cryptonium`}
 									/>
 									<Link href={`/posts/${article.id}`}>
 										<a className={styles.section__latestArticles__title}>
@@ -101,7 +101,10 @@ export default function Home({
 							{volgon.articles.slice(-3).map((article) => (
 								<Link key={article.id} href={`/posts/${article.id}`}>
 									<a className={styles.catArticles}>
-										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<img
+											src={article.Cover_photo.formats.thumbnail.url}
+											alt={`${article.Title} - Cryptonium`}
+										/>
 										<div>
 											<h2>{article.Title.toLowerCase()}</h2>
 											<p>
@@ -157,7 +160,10 @@ export default function Home({
 							{gnosis.articles.slice(-3).map((article) => (
 								<Link key={article.id} href={`/posts/${article.id}`}>
 									<a className={styles.catArticles}>
-										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<img
+											src={article.Cover_photo.formats.thumbnail.url}
+											alt={`${article.Title} - Cryptonium`}
+										/>
 										<div>
 											<h2>{article.Title.toLowerCase()}</h2>
 											<p>
@@ -214,7 +220,10 @@ export default function Home({
 							{elites.articles.slice(-3).map((article) => (
 								<Link key={article.id} href={`/posts/${article.id}`}>
 									<a className={styles.catArticles}>
-										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<img
+											src={article.Cover_photo.formats.thumbnail.url}
+											alt={`${article.Title} - Cryptonium`}
+										/>
 										<div>
 											<h2>{article.Title.toLowerCase()}</h2>
 											<p>
@@ -272,7 +281,10 @@ export default function Home({
 							{twitter.articles.slice(-3).map((article) => (
 								<Link key={article.id} href={`/posts/${article.id}`}>
 									<a className={styles.catArticles}>
-										<img src={article.Cover_photo.formats.thumbnail.url} />
+										<img
+											src={article.Cover_photo.formats.thumbnail.url}
+											alt={`${article.Title} - Cryptonium`}
+										/>
 										<div>
 											<h2>{article.Title.toLowerCase()}</h2>
 											<p>

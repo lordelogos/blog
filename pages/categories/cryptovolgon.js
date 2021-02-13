@@ -5,12 +5,13 @@ import Head from "next/head";
 import styles from "../../styles/Categories.module.css";
 import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import PriceTracker from "../PriceTracker";
 
 function cryptovolgon({ posts, categories }) {
 	return (
 		<div>
 			<Head>
-				<title>{posts.category}</title>
+				<title>{posts.category} - Cryptonium</title>
 				<link rel="icon" href="/favicon.svg" />
 				<meta name="description" content="latest events in cryptocurrency" />
 				<script
@@ -27,6 +28,7 @@ function cryptovolgon({ posts, categories }) {
 			</Head>
 			<main>
 				<Nav categories={categories} />
+				<PriceTracker />
 				<div className={`${styles.banner} ${styles.volgon}`}>
 					<h2>{posts.category}</h2>
 					{/* <p>description goes here</p> */}
@@ -36,7 +38,10 @@ function cryptovolgon({ posts, categories }) {
 						<div
 							key={post.id}
 							className={`${styles.article} ${styles.twitter} `}>
-							<img src={post.Cover_photo.formats.small.url} alt={post.Title} />
+							<img
+								src={post.Cover_photo.formats.small.url}
+								alt={`${post.Title} - Cryptonium`}
+							/>
 							<div>
 								<p className={`${styles.acat} ${styles.volgon} `}>
 									{posts.category}

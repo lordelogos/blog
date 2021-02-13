@@ -5,12 +5,13 @@ import Head from "next/head";
 import styles from "../../styles/Categories.module.css";
 import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import PriceTracker from "../PriceTracker";
 
 function cryptoelites({ posts, categories }) {
 	return (
 		<div>
 			<Head>
-				<title>{posts.category}</title>
+				<title>{posts.category} - Categories Cryptonium</title>
 				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
@@ -30,6 +31,7 @@ function cryptoelites({ posts, categories }) {
 			</Head>
 			<main>
 				<Nav categories={categories} />
+				<PriceTracker />
 				<div className={`${styles.banner} ${styles.elites}`}>
 					<h2>{posts.category}</h2>
 					{/* <p>description goes here</p> */}
@@ -39,7 +41,10 @@ function cryptoelites({ posts, categories }) {
 						<div
 							key={post.id}
 							className={`${styles.article} ${styles.twitter} `}>
-							<img src={post.Cover_photo.formats.small.url} alt={post.Title} />
+							<img
+								src={post.Cover_photo.formats.small.url}
+								alt={`${post.Title} - Cryptonium`}
+							/>
 							<div>
 								<p className={`${styles.acat} ${styles.elites} `}>
 									{posts.category}

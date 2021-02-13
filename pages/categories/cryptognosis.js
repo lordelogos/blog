@@ -5,12 +5,13 @@ import Head from "next/head";
 import styles from "../../styles/Categories.module.css";
 import Link from "next/link";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import PriceTracker from "../PriceTracker";
 
 function cryptognosis({ posts, categories }) {
 	return (
 		<div>
 			<Head>
-				<title>{posts.category}</title>
+				<title>{posts.category} - Cryptonium</title>
 				<link rel="icon" href="/favicon.svg" />
 				<meta
 					name="description"
@@ -30,6 +31,7 @@ function cryptognosis({ posts, categories }) {
 			</Head>
 			<main>
 				<Nav categories={categories} />
+				<PriceTracker />
 				<div className={`${styles.banner} ${styles.gnosis}`}>
 					<h2>{posts.category}</h2>
 				</div>
@@ -38,7 +40,10 @@ function cryptognosis({ posts, categories }) {
 						<div
 							key={post.id}
 							className={`${styles.article} ${styles.twitter} `}>
-							<img src={post.Cover_photo.formats.small.url} alt={post.Title} />
+							<img
+								src={post.Cover_photo.formats.small.url}
+								alt={`${post.Title} - Cryptonium`}
+							/>
 							<div>
 								<p className={`${styles.acat} ${styles.gnosis} `}>
 									{posts.category}

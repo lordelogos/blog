@@ -531,6 +531,18 @@
 	background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);
 }
 
+.twitter > h2 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+	.twitter > h2 {
+		font-size: 16px;
+		font-weight: 500;
+	}
+}
+
 .twitter > a {
 	margin-bottom: 30px;
 }
